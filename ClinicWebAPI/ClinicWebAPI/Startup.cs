@@ -27,7 +27,7 @@ namespace ClinicWebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ClinicContext>(options => options.UseSqlServer("Server = LAPTOP - ESH7TJI8\\MSSQLSERVER1; Database = ClinicProjectWebAPI; Trusted_Connection = True; MultipleActiveResultSets = true"));
+            services.AddDbContext<ClinicContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

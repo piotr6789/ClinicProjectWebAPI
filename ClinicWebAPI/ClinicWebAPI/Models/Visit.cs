@@ -9,6 +9,7 @@ namespace ClinicWebAPI.Models
     public class Visit
     {
         [Key]
+        public int Id { get; set; }
         public DateTime VisitTime { get; set; }
         public string Description { get; set; }
     }

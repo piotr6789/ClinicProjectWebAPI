@@ -9,6 +9,7 @@ namespace ClinicWebAPI.Models
     public class Ailment
     {
         [Key]
-        public string Name { get; set; }
+        public int AilmentId { get; set; }
+        public string Description { get; set; }
     }
 }
