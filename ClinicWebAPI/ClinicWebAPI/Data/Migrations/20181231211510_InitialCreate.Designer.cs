@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicWebAPI.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20181230212243_InitialCreate")]
+    [Migration("20181231211510_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,7 +23,7 @@ namespace ClinicWebAPI.Data.Migrations
 
             modelBuilder.Entity("ClinicWebAPI.Models.Ailment", b =>
                 {
-                    b.Property<int>("AilmentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -31,7 +31,7 @@ namespace ClinicWebAPI.Data.Migrations
 
                     b.Property<int?>("PatientId");
 
-                    b.HasKey("AilmentId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PatientId");
 

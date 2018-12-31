@@ -21,7 +21,7 @@ namespace ClinicWebAPI.Data.Migrations
 
             modelBuilder.Entity("ClinicWebAPI.Models.Ailment", b =>
                 {
-                    b.Property<int>("AilmentId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -29,7 +29,7 @@ namespace ClinicWebAPI.Data.Migrations
 
                     b.Property<int?>("PatientId");
 
-                    b.HasKey("AilmentId");
+                    b.HasKey("Id");
 
                     b.HasIndex("PatientId");
 

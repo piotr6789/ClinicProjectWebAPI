@@ -45,6 +45,8 @@ namespace ClinicWebAPI
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            DummyData.Initialize(app);
         }
     }
 }

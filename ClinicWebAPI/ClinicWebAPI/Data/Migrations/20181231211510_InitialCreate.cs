@@ -45,14 +45,14 @@ namespace ClinicWebAPI.Data.Migrations
                 name: "Ailments",
                 columns: table => new
                 {
-                    AilmentId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Description = table.Column<string>(nullable: true),
                     PatientId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ailments", x => x.AilmentId);
+                    table.PrimaryKey("PK_Ailments", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Ailments_Patients_PatientId",
                         column: x => x.PatientId,
