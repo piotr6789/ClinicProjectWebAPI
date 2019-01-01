@@ -108,7 +108,7 @@ namespace ClinicWebAPI.Data
                 {
                     Name = "Anna Nowak",
                     Ailments = new List<Ailment>(db.Ailments.Take(1)),
-                    Medications = new List<Medication>(db.Medications.OrderBy(m => m.Name).Skip(1).Take(2)),
+                    Medications = new List<Medication>(db.Medications.Skip(1).Take(2)),
                     Visits = new List<Visit>(db.Visits.Take(1)),
                     Doctor = new Doctor { Id = 2, Name = "Andrzej Kowalski" }
                 },
@@ -116,7 +116,7 @@ namespace ClinicWebAPI.Data
                 {
                     Name = "Karolina Olejniczak",
                     Ailments = new List<Ailment>(db.Ailments.Skip(3).Take(1)),
-                    Medications = new List<Medication>(db.Medications.OrderBy(m => m.Name).Skip(2).Take(1)),
+                    Medications = new List<Medication>(db.Medications.Skip(2).Take(1)),
                     Visits = new List<Visit>(db.Visits.Skip(2).Take(2)),
                     Doctor = new Doctor { Id = 4, Name = "Adam Janicki" }
                 }

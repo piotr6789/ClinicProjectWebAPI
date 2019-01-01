@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ClinicWebAPI.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20181231211510_InitialCreate")]
+    [Migration("20181231220057_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
