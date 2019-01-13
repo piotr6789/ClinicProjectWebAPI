@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ClinicWebAPI.Data.Migrations
+namespace ClinicWebAPI.Migrations
 {
     [DbContext(typeof(ClinicContext))]
     partial class ClinicContextModelSnapshot : ModelSnapshot

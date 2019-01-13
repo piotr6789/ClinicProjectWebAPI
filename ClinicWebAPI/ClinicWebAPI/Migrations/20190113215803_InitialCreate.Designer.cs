@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ClinicWebAPI.Data.Migrations
+namespace ClinicWebAPI.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20181231220057_InitialCreate")]
+    [Migration("20190113215803_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

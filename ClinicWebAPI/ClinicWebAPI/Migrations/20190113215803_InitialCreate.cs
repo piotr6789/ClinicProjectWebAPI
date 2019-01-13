@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace ClinicWebAPI.Data.Migrations
+namespace ClinicWebAPI.Migrations
 {
     public partial class InitialCreate : Migration
     {
