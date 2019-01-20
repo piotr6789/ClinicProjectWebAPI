@@ -3,7 +3,6 @@ C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\Clini
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\bin\Debug\netcoreapp2.1\ClinicWebAPI.runtimeconfig.dev.json
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\bin\Debug\netcoreapp2.1\ClinicWebAPI.dll
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\bin\Debug\netcoreapp2.1\ClinicWebAPI.pdb
-C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.csprojAssemblyReference.cache
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.csproj.CoreCompileInputs.cache
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.RazorAssemblyInfo.cache
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.RazorAssemblyInfo.cs
@@ -12,3 +11,4 @@ C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\Clini
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.RazorTargetAssemblyInfo.cache
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.dll
 C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.pdb
+C:\Users\qoris\Documents\Studia\Pracownia programowania\Projekt-zaliczenie\ClinicProjectWebAPI\ClinicWebAPI\ClinicWebAPI\obj\Debug\netcoreapp2.1\ClinicWebAPI.csprojAssemblyReference.cache

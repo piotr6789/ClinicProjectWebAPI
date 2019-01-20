@@ -28,8 +28,7 @@ namespace ClinicWebAPI.Controllers
             return _context.Patients
                 .Include(a => a.Ailments)
                 .Include(m => m.Medications)
-                .Include(v => v.Visits)
-                .Include(d => d.Doctor);
+                .Include(v => v.Visits);
         }
 
         // GET: api/Patients/5
@@ -41,12 +40,7 @@ namespace ClinicWebAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            var patient = await _context.Patients
-                .Include(a => a.Ailments)
-                .Include(m => m.Medications)
-                .Include(v => v.Visits)
-                .Include(d => d.Doctor)
-                .FirstOrDefaultAsync(i => i.Id == id);
+            var patient = await _context.Patients.FindAsync(id);
 
             if (patient == null)
             {
@@ -95,13 +89,23 @@ namespace ClinicWebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> PostPatient([FromBody] Patient patient)
         {
-            if (!ModelState.IsValid)
+            try
             {
-                return BadRequest(ModelState);
-            }
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
 
-            _context.Patients.Add(patient);
-            await _context.SaveChangesAsync();
+                _context.Patients.Add(patient);
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                string innerException = ex.InnerException != null ? ex.InnerException.Message : string.Empty;
+                string error = $"Error: {ex.Message} InnerException: {innerException}";
+
+                return StatusCode(500, error);
+            }
 
             return CreatedAtAction("GetPatient", new { id = patient.Id }, patient);
         }
@@ -130,62 +134,6 @@ namespace ClinicWebAPI.Controllers
         private bool PatientExists(int id)
         {
             return _context.Patients.Any(e => e.Id == id);
-        }
-
-        // GET api/patients/3/medication
-        [HttpGet("{id:int}/medication")]
-        public async Task<IActionResult> GetMedications(int id)
-        {
-            var patient = await _context.Patients
-              .Include(m => m.Medications)
-              .FirstOrDefaultAsync(i => i.Id == id);
-
-            if (patient == null)
-                return NotFound();
-
-            return Ok(patient.Medications);
-        }
-
-        // GET api/patients/3/visit
-        [HttpGet("{id:int}/visit")]
-        public async Task<IActionResult> GetVisits(int id)
-        {
-            var patient = await _context.Patients
-              .Include(m => m.Visits)
-              .FirstOrDefaultAsync(i => i.Id == id);
-
-            if (patient == null)
-                return NotFound();
-
-            return Ok(patient.Visits);
-        }
-
-        // GET api/patients/3/ailment
-        [HttpGet("{id:int}/ailment")]
-        public async Task<IActionResult> GetAilments(int id)
-        {
-            var patient = await _context.Patients
-              .Include(m => m.Ailments)
-              .FirstOrDefaultAsync(i => i.Id == id);
-
-            if (patient == null)
-                return NotFound();
-
-            return Ok(patient.Ailments);
-        }
-
-        // GET api/patients/3/doctor
-        [HttpGet("{id:int}/doctor")]
-        public async Task<IActionResult> GetDoctors(int id)
-        {
-            var patient = await _context.Patients
-              .Include(m => m.Doctor)
-              .FirstOrDefaultAsync(i => i.Id == id);
-
-            if (patient == null)
-                return NotFound();
-
-            return Ok(patient.Doctor);
         }
     }
 }

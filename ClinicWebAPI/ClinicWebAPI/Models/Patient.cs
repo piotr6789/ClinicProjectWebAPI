@@ -9,7 +9,7 @@ namespace ClinicWebAPI.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-
+        public int DoctorId { get; set; }
         public ICollection<Ailment> Ailments { get; set; }
         public ICollection<Medication> Medications { get; set; }
         public ICollection<Visit> Visits { get; set; }

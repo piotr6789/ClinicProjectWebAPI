@@ -15,6 +15,11 @@ namespace ClinicWebAPI.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<Patient>()
+                   .HasOne(d => d.Doctor)
+                   .WithMany(p => p.Patients)
+                   .HasForeignKey(d => d.DoctorId);
+
             base.OnModelCreating(builder);
         }
 

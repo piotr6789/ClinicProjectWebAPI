@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ClinicWebAPI.Migrations
+namespace ClinicWebAPI.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20190113215803_InitialCreate")]
+    [Migration("20190119173321_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -76,7 +76,7 @@ namespace ClinicWebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DoctorId");
+                    b.Property<int>("DoctorId");
 
                     b.Property<string>("Name");
 
@@ -123,8 +123,9 @@ namespace ClinicWebAPI.Migrations
             modelBuilder.Entity("ClinicWebAPI.Models.Patient", b =>
                 {
                     b.HasOne("ClinicWebAPI.Models.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorId");
+                        .WithMany("Patients")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ClinicWebAPI.Models.Visit", b =>

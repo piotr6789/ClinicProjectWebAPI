@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ClinicWebAPI.Migrations
+namespace ClinicWebAPI.Data.Migrations
 {
     [DbContext(typeof(ClinicContext))]
     partial class ClinicContextModelSnapshot : ModelSnapshot
@@ -74,7 +74,7 @@ namespace ClinicWebAPI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("DoctorId");
+                    b.Property<int>("DoctorId");
 
                     b.Property<string>("Name");
 
@@ -121,8 +121,9 @@ namespace ClinicWebAPI.Migrations
             modelBuilder.Entity("ClinicWebAPI.Models.Patient", b =>
                 {
                     b.HasOne("ClinicWebAPI.Models.Doctor", "Doctor")
-                        .WithMany()
-                        .HasForeignKey("DoctorId");
+                        .WithMany("Patients")
+                        .HasForeignKey("DoctorId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("ClinicWebAPI.Models.Visit", b =>
