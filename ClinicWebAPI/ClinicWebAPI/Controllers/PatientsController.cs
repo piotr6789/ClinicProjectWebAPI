@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ClinicWebAPI.Data;
 using ClinicWebAPI.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace ClinicWebAPI.Controllers
 {
@@ -25,10 +26,7 @@ namespace ClinicWebAPI.Controllers
         [HttpGet]
         public IEnumerable<Patient> GetPatients()
         {
-            return _context.Patients
-                .Include(a => a.Ailments)
-                .Include(m => m.Medications)
-                .Include(v => v.Visits);
+            return _context.Patients;
         }
 
         // GET: api/Patients/5

@@ -11,7 +11,7 @@ namespace ClinicWebAPI.Data
     {
         public ClinicContext(DbContextOptions options)
             : base(options)
-        { }
+        {}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -20,7 +20,21 @@ namespace ClinicWebAPI.Data
                    .WithMany(p => p.Patients)
                    .HasForeignKey(d => d.DoctorId);
 
-            base.OnModelCreating(builder);
+            builder.Entity<Ailment>()
+                .HasOne(p => p.Patient)
+                .WithMany(a => a.Ailments)
+                .HasForeignKey(p => p.PatientId);
+
+            builder.Entity<Medication>()
+                .HasOne(p => p.Patient)
+                .WithMany(a => a.Medications)
+                .HasForeignKey(p => p.PatientId);
+
+            builder.Entity<Visit>()
+                .HasOne(p => p.Patient)
+                .WithMany(a => a.Visits)
+                .HasForeignKey(p => p.PatientId);
+
         }
 
         public DbSet<Ailment> Ailments { get; set; }

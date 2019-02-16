@@ -4,16 +4,14 @@ using ClinicWebAPI.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace ClinicWebAPI.Data.Migrations
+namespace ClinicWebAPI.Migrations
 {
     [DbContext(typeof(ClinicContext))]
-    [Migration("20190119173321_InitialCreate")]
-    partial class InitialCreate
+    partial class ClinicContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

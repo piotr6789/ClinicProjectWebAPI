@@ -12,5 +12,7 @@ namespace ClinicWebAPI.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Doses { get; set; }
+        public int PatientId { get; set; }
+        public Patient Patient { get; set; }
     }
 }
